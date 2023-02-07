@@ -1,5 +1,7 @@
 'use strict'
 
+const plus=document.querySelector(".js-fa-plus-circle");
+
 const kittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
 const kittenOneName = 'Anastacio';
 const kittenOneDesc = 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
@@ -16,7 +18,7 @@ const kittenThreeDesc = 'Tienen la cabeza cuadrada y los ojos simétricos, por l
 const kittenThreeRace = 'Maine Coon';
 
 const form=document.querySelector('.js-new-form');
-form.classList.remove("collapsed");
+
 
 const list=document.querySelector(".js-list")
 //const kittenOne=document.querySelector("card")
@@ -33,6 +35,19 @@ const kittenOne = `<li class="card">
             </article>
           
           </li>`;
+
+
+
+plus.addEventListener("click", (event)=>{
+  event.preventDefault();
+  if (form.classList.contains('collapsed')) {
+    form.classList.remove("collapsed");
+  } else {
+    form.classList.add("collapsed");
+  }
+})
+
+
 
 
 const kittenTwo = `<li class="card">
