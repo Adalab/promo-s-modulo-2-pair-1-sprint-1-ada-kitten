@@ -20,6 +20,7 @@ const kittenThreeRace = 'Maine Coon';
 const form=document.querySelector('.js-new-form');
 
 
+
 const list=document.querySelector(".js-list")
 //const kittenOne=document.querySelector("card")
 const kittenOne = `<li class="card">
@@ -70,3 +71,17 @@ const kittenThree = `<li class="card">
                 <h4 class="card_race">${kittenThreeRace}</h4>
                 <p class="card_description">${kittenThreeDesc}</p>
                 </li>`;
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const descrSearchText = input_search_desc.value;
+if( kittenDesc1.includes(descrSearchText) ) {
+  list.innerHTML=kittenOne;
+  }
+  
+if( kittenDesc2.includes(descrSearchText) ) {
+  list.innerHTML+=kittenTwo;
+}
+
+if( kittenDesc3.includes(descrSearchText) ) {
+  list.innerHTML+=kittenThree;
+}
