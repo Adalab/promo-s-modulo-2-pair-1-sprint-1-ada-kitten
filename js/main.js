@@ -19,7 +19,35 @@ const kittenThreeRace = 'Maine Coon';
 
 const form=document.querySelector('.js-new-form');
 
+plus.addEventListener("click", (event)=>{
+  event.preventDefault();
+  if (form.classList.contains('collapsed')) {
+    form.classList.remove("collapsed");
+  } else {
+    form.classList.add("collapsed");
+  }
+})
 
+const btnAdd = document.querySelector('.js-btn-add');
+btnAdd.addEventListener('click', (event)=>{
+  event.preventDefault();
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  const valueRace = inputRace.value;
+  const valueDesc = inputDesc.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '' || valueRace === '') {
+    label.innerHTML = '¡Uy! parece que has olvidado algo';
+  } else {
+    //completa el código
+  }
+})
+
+const inputPhoto = document.querySelector ('.js-input-photo');
+const inputName = document.querySelector ('.js-input-name');
+const inputRace = document.querySelector ('.js-input-race');
+const inputDesc = document.querySelector ('.js-input-desc');
+const label = document.querySelector ('.js-label-error');
 
 const list=document.querySelector(".js-list")
 //const kittenOne=document.querySelector("card")
@@ -36,19 +64,6 @@ const kittenOne = `<li class="card">
             </article>
           
           </li>`;
-
-
-
-plus.addEventListener("click", (event)=>{
-  event.preventDefault();
-  if (form.classList.contains('collapsed')) {
-    form.classList.remove("collapsed");
-  } else {
-    form.classList.add("collapsed");
-  }
-})
-
-
 
 
 const kittenTwo = `<li class="card">
