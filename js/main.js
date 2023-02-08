@@ -43,6 +43,18 @@ btnAdd.addEventListener('click', (event)=>{
   }
 })
 
+const cancel = document.querySelector('.js-button-cancel');
+cancel.addEventListener("click", (event)=>{
+  event.preventDefault();
+    inputPhoto.value = ('');
+    inputName.value = ('');
+    inputRace.value = ('');
+    inputDesc.value = ('');
+
+    form.classList.add("collapsed");
+  
+})
+
 const inputPhoto = document.querySelector ('.js-input-photo');
 const inputName = document.querySelector ('.js-input-name');
 const inputRace = document.querySelector ('.js-input-race');
