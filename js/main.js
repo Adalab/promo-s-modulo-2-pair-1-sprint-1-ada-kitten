@@ -18,15 +18,29 @@ const kittenThreeDesc = 'Tienen la cabeza cuadrada y los ojos simétricos, por l
 const kittenThreeRace = 'Maine Coon';
 
 const form=document.querySelector('.js-new-form');
-
+function showNewCatForm() {
+  form.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  form.classList.add('collapsed');
+}
+function handleClickNewCatForm (ev){
+  ev.preventDefault();
+  
+}
 plus.addEventListener("click", (event)=>{
   event.preventDefault();
   if (form.classList.contains('collapsed')) {
-    form.classList.remove("collapsed");
+    showNewCatForm ();
+    //form.classList.remove("collapsed");
   } else {
-    form.classList.add("collapsed");
+    //form.classList.add("collapsed");
+    hideNewCatForm ();
+    form.addEventListener('click', handleClickNewCatForm);
   }
 })
+
+
 
 const btnAdd = document.querySelector('.js-btn-add');
 btnAdd.addEventListener('click', (event)=>{
@@ -101,14 +115,14 @@ const kittenThree = `<li class="card">
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
-if( kittenDesc1.includes(descrSearchText) ) {
+if( kittenOneDesc.includes(descrSearchText) ) {
   list.innerHTML=kittenOne;
   }
   
-if( kittenDesc2.includes(descrSearchText) ) {
+if( kittenTwoDesc.includes(descrSearchText) ) {
   list.innerHTML+=kittenTwo;
 }
 
-if( kittenDesc3.includes(descrSearchText) ) {
+if( kittenThreeDesc.includes(descrSearchText) ) {
   list.innerHTML+=kittenThree;
 }
