@@ -26,25 +26,6 @@ function hideNewCatForm() {
 }
 function handleClickNewCatForm (ev){
   ev.preventDefault();
-  
-}
-plus.addEventListener("click", (event)=>{
-  event.preventDefault();
-  if (form.classList.contains('collapsed')) {
-    showNewCatForm ();
-    //form.classList.remove("collapsed");
-  } else {
-    //form.classList.add("collapsed");
-    hideNewCatForm ();
-    form.addEventListener('click', handleClickNewCatForm);
-  }
-})
-
-
-
-const btnAdd = document.querySelector('.js-btn-add');
-btnAdd.addEventListener('click', (event)=>{
-  event.preventDefault();
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
   const valueRace = inputRace.value;
@@ -55,7 +36,24 @@ btnAdd.addEventListener('click', (event)=>{
   } else {
     //completa el código
   }
+}
+plus.addEventListener("click", (event)=>{
+  event.preventDefault();
+  if (form.classList.contains('collapsed')) {
+    showNewCatForm ();
+    //form.classList.remove("collapsed");
+  } else {
+    //form.classList.add("collapsed");
+    hideNewCatForm ();
+  }
 })
+
+
+
+const btnAdd = document.querySelector('.js-btn-add');
+btnAdd.addEventListener ('click', handleClickNewCatForm);
+  
+
 
 const cancel = document.querySelector('.js-button-cancel');
 cancel.addEventListener("click", (event)=>{
@@ -77,41 +75,80 @@ const label = document.querySelector ('.js-label-error');
 
 const list=document.querySelector(".js-list")
 //const kittenOne=document.querySelector("card")
-const kittenOne = `<li class="card">
-            <article>
-              <img
-                class="card_img"
-                src="${kittenOneImage}"
-                alt="siames-cat"
-              />
-              <h3 class="card_title">${kittenOneName}</h3>
-              <h4 class="card_race">${kittenOneRace}</h4>
-              <p class="card_description">${kittenOneDesc}</p>
-            </article>
+
+const renderOneKitten = (kitten) =>{
+  return `<li class="card">
+  <article>
+    <img
+      class="card_img"
+      src="${kittenOneImage}"
+      alt="siames-cat"
+    />
+    <h3 class="card_title">${kittenOneName}</h3>
+    <h4 class="card_race">${kittenOneRace}</h4>
+    <p class="card_description">${kittenOneDesc}</p>
+  </article>
+</li>`;
+}
+const renderTwoKitten = (kitten) =>{
+  return   `<li class="card">
+  <img
+    class="card_img"
+    src="${kittenTwoImage}"
+    alt="sphynx-cat"/>
+  <h3 class="card_title">${kittenTwoName}</h3>
+  <h4 class="card_race">${kittenTwoRace}</h4>
+  <p class="card_description">${kittenTwoDesc}</p>
+  </li>`;
+}
+const renderThreeKitten = (kitten) =>{
+  return `<li class="card">
+  <img
+    class="card_img"
+    src="${kittenThreeImage}"
+    alt="maine-coon-cat"
+  />
+  <h3 class="card_title">${kittenThreeName}</h3>
+  <h4 class="card_race">${kittenThreeRace}</h4>
+  <p class="card_description">${kittenThreeDesc}</p>
+  </li>`;  
+}
+
+// const kittenOne = `<li class="card">
+//             <article>
+//               <img
+//                 class="card_img"
+//                 src="${kittenOneImage}"
+//                 alt="siames-cat"
+//               />
+//               <h3 class="card_title">${kittenOneName}</h3>
+//               <h4 class="card_race">${kittenOneRace}</h4>
+//               <p class="card_description">${kittenOneDesc}</p>
+//             </article>
           
-          </li>`;
+//           </li>`;
 
 
-const kittenTwo = `<li class="card">
-              <img
-                class="card_img"
-                src="${kittenTwoImage}"
-                alt="sphynx-cat"/>
-              <h3 class="card_title">${kittenTwoName}</h3>
-              <h4 class="card_race">${kittenTwoRace}</h4>
-              <p class="card_description">${kittenTwoDesc}</p>
-              </li>`;
+// const kittenTwo = `<li class="card">
+//               <img
+//                 class="card_img"
+//                 src="${kittenTwoImage}"
+//                 alt="sphynx-cat"/>
+//               <h3 class="card_title">${kittenTwoName}</h3>
+//               <h4 class="card_race">${kittenTwoRace}</h4>
+//               <p class="card_description">${kittenTwoDesc}</p>
+//               </li>`;
 
-const kittenThree = `<li class="card">
-                <img
-                  class="card_img"
-                  src="${kittenThreeImage}"
-                  alt="maine-coon-cat"
-                />
-                <h3 class="card_title">${kittenThreeName}</h3>
-                <h4 class="card_race">${kittenThreeRace}</h4>
-                <p class="card_description">${kittenThreeDesc}</p>
-                </li>`;
+// const kittenThree = `<li class="card">
+//                 <img
+//                   class="card_img"
+//                   src="${kittenThreeImage}"
+//                   alt="maine-coon-cat"
+//                 />
+//                 <h3 class="card_title">${kittenThreeName}</h3>
+//                 <h4 class="card_race">${kittenThreeRace}</h4>
+//                 <p class="card_description">${kittenThreeDesc}</p>
+//                 </li>`;
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
